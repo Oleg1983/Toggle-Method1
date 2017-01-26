@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toggle New First Method</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style>
+      .hiddenElement{
+        display: none !important;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+      <br>
+      <a href="#" class="btn btn-info" id="toggleForm">Toggle form [-]</a>
+
+      <br><br><br><br>
+
+      <form action="formdata.php" id="myForm">
+        <h3>Some form 1</h3>
+        <div class="form-group">
+          <input type="text" class="form-control">
+          <br>
+          <button type="submit" class="btn btn-default">Send</button>
+        </div>
+      </form>
+
+      </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        $('#toggleForm').click(function(eventObject){
+            eventObject.preventDefault();
+            if(!$('#myForm').hasClass('hiddenElement')){
+                $('#myForm').addClass('hiddenElement');
+                $('#toggleForm').text('Toggle form [+]');
+            } else {
+              $('#myForm').removeClass('hiddenElement');
+              $('#toggleForm').text('Toggle form [-]');
+            }
+
+        });
+
+      }); // END READY
+    </script>
+  </body>
+</html>
